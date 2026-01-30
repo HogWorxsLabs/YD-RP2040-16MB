@@ -21,7 +21,7 @@ The YD-RP2040 is a Raspberry Pi Pico-compatible board with enhanced features.
 
 ## ⚠️ NeoPixel Solder Bridge
 
-Some boards ship with the NeoPixel disconnected. If it doesn't work, bridge the pads labeled **"RGB"** near the LED with solder.
+Some boards ship with the NeoPixel disconnected. If it doesn't work, bridge the pads labeled **"R58"** near the LED with solder.
 
 ---
 
