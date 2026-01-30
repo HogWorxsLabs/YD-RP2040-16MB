@@ -27,34 +27,12 @@ Some boards ship with the NeoPixel disconnected. If it doesn't work, bridge the 
 
 ## 🔌 Pinout
 
-```
-                    ┌───────────────┐
-            GPIO0  ─┤1            40├─ VBUS
-            GPIO1  ─┤2            39├─ VSYS
-              GND  ─┤3            38├─ GND
-            GPIO2  ─┤4            37├─ 3V3_EN
-            GPIO3  ─┤5            36├─ 3V3
-            GPIO4  ─┤6            35├─ ADC_VREF
-            GPIO5  ─┤7            34├─ GPIO28 (ADC2)
-              GND  ─┤8            33├─ GND
-            GPIO6  ─┤9            32├─ GPIO27 (ADC1)
-            GPIO7  ─┤10           31├─ GPIO26 (ADC0)
-            GPIO8  ─┤11           30├─ RUN
-            GPIO9  ─┤12           29├─ GPIO22
-              GND  ─┤13           28├─ GND
-           GPIO10  ─┤14           27├─ GPIO21
-           GPIO11  ─┤15           26├─ GPIO20
-           GPIO12  ─┤16           25├─ GPIO19
-           GPIO13  ─┤17           24├─ GPIO18
-              GND  ─┤18           23├─ GND
-           GPIO14  ─┤19           22├─ GPIO17
-           GPIO15  ─┤20           21├─ GPIO16
-                    └───────────────┘
+![YD-RP2040 Pinout](pinout.webp)
 
-    GPIO23 → NeoPixel RGB LED (requires solder bridge)
-    GPIO24 → USR Button (works out of the box)
-    GPIO25 → Blue LED
-```
+**On-board components:**
+- GPIO23 → NeoPixel RGB LED (requires solder bridge)
+- GPIO24 → USR Button (works out of the box)
+- GPIO25 → Blue LED
 
 ---
 
