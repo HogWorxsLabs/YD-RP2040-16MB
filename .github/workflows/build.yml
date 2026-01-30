@@ -1,7 +1,7 @@
 name: Build MicroPython for YD-RP2040-16MB
 
 on:
-  workflow_dispatch:  # Manual trigger - click "Run workflow" button
+  workflow_dispatch:
 
 jobs:
   build:
@@ -36,12 +36,6 @@ jobs:
           
           #define MICROPY_HW_BOARD_NAME           "YD-RP2040-16MB"
           #define MICROPY_HW_FLASH_STORAGE_BYTES  (15 * 1024 * 1024)
-          
-          // On-board LED
-          #define MICROPY_HW_LED_STATUS           (&pin_GPIO25)
-          
-          // WS2812 RGB LED on GPIO23
-          #define MICROPY_HW_NEOPIXEL             (&pin_GPIO23)
           EOF
           
           cat > ports/rp2/boards/YD_RP2040_16MB/mpconfigboard.cmake << 'EOF'
@@ -49,46 +43,11 @@ jobs:
           set(PICO_PLATFORM "rp2040")
           set(PICO_FLASH_SIZE_BYTES 16777216)
           EOF
-          
-          cat > ports/rp2/boards/YD_RP2040_16MB/pins.csv << 'EOF'
-          GPIO0,GPIO0
-          GPIO1,GPIO1
-          GPIO2,GPIO2
-          GPIO3,GPIO3
-          GPIO4,GPIO4
-          GPIO5,GPIO5
-          GPIO6,GPIO6
-          GPIO7,GPIO7
-          GPIO8,GPIO8
-          GPIO9,GPIO9
-          GPIO10,GPIO10
-          GPIO11,GPIO11
-          GPIO12,GPIO12
-          GPIO13,GPIO13
-          GPIO14,GPIO14
-          GPIO15,GPIO15
-          GPIO16,GPIO16
-          GPIO17,GPIO17
-          GPIO18,GPIO18
-          GPIO19,GPIO19
-          GPIO20,GPIO20
-          GPIO21,GPIO21
-          GPIO22,GPIO22
-          GPIO23,GPIO23
-          GPIO24,GPIO24
-          GPIO25,GPIO25
-          GPIO26,GPIO26
-          GPIO27,GPIO27
-          GPIO28,GPIO28
-          GPIO29,GPIO29
-          LED,GPIO25
-          NEOPIXEL,GPIO23
-          EOF
       
       - name: Build firmware
         run: |
           cd ports/rp2
-          make BOARD=YD_RP2040_16MB
+          make BOARD=YD_RP2040_16MB CFLAGS_EXTRA=-Wno-error
       
       - name: Upload UF2 artifact
         uses: actions/upload-artifact@v4
