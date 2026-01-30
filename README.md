@@ -2,6 +2,8 @@
 
 Custom MicroPython firmware for the **YD-RP2040** development board by VCC-GND Studio, featuring 16MB of flash storage.
 
+> **📦 Download:** Get the latest `firmware.uf2` from the [Releases](../../releases) section on the right side of this page.
+
 ---
 
 ## 📋 About This Board
